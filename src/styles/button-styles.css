@@ -1,0 +1,22 @@
+.app-wrapper form button[type="submit"] {
+  margin-top: 6rem;
+  border: none;
+  bottom: 6%;
+  left: 5%;
+  padding: 1rem;
+  width: 20vmin;
+  border-radius: 4px;
+}
+
+.btn {
+  background: darkgray;
+  font-variant: small-caps;
+  color: rgba(255,255,255,.4);
+  transition: var(--transition);
+  box-shadow: var(--box-shadow) gray;
+}
+.btn:hover {
+  cursor: pointer;
+  background: darkblue;
+  color: whitesmoke;
+}

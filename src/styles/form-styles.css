@@ -1,0 +1,184 @@
+.app-wrapper form {
+  position: relative;
+  height: auto;
+  width: 60%;
+  padding: calc(var(--padding) + 1rem);
+  background: ghostwhite;
+  box-sizing: border-box;
+  box-shadow: var(--box-shadow) darkblue;
+}
+
+.input-group {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: var(--padding);
+  margin: var(--padding) 0;
+}
+
+.input-group label {
+  position: absolute;
+  top: 40%;
+  left: 2%;
+  color: var(--primary);
+}
+
+.input-group label[for="message"] {
+  top: 14%;
+}
+
+.input-group input {
+  height: 3vmin;
+  width: 80%;
+  border-radius: var(--border-radius);
+}
+
+.input-group.has-error {
+  animation-name: alert;
+  animation-duration: 620ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes alert {
+  0%, 100% {
+    background: white;
+  }
+
+  50% {
+    color: white;
+    background: rgba(224, 31, 31, 0.7);
+  }
+}
+
+.input-group.has-error,
+.input-group.has-error > label {
+  color: var(--error);
+}
+
+.alert.alert-danger {
+  position: absolute;
+  bottom: 0;
+  left: 14%;
+}
+
+.input-group.has-error > input,
+.input-group.has-error > textarea {
+  border-color: var(--error);
+}
+
+.input-group input, .input-group textarea {
+  border: 1px solid var(--primary);
+  padding: 12px;
+  margin: var(--padding) 0 var(--padding) calc(var(--padding) + 5rem);
+}
+
+.input-group textarea {
+  width: 80%;
+  resize: vertical;
+  min-height: 12vmin;
+  max-height: 22vmin;
+}
+
+
+.message-error_api-call {
+  z-index: 99;
+  width: 100%;
+  height: 120%;
+  position: fixed;
+  background: rgba(0,0,0,.8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-error_api-call span {
+  opacity: 0;
+  color: white;
+  text-align: center;
+  background: darkblue;
+  padding: calc(var(--padding) * 2);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) darkblue;
+  transition: var(--transition);
+  animation: expanding forwards 320ms ease-in-out 120ms;
+}
+
+@keyframes expanding {
+  from {
+    opacity: 0;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+
+@media screen and (max-width: 63rem) {
+
+  .input-group  input,
+  .input-group textarea {
+    width: 66%;
+  }
+
+  .alert.alert-danger {
+    left: 30%;
+  }
+
+  .input-group textarea {
+    max-height: 14vmin;
+  }
+
+}
+
+@media screen and (max-width: 43rem) {
+  .app-wrapper form {
+    position: relative;
+    width: 90%;
+    padding: var(--padding);
+
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .input-group input {
+    margin: var(--padding) 0;
+    height: 5vmin;
+  }
+
+  .alert.alert-danger {
+    left: 5%;
+  }
+  .message-error_api-call span {
+    width: 60%;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    width: 92%;
+  }
+
+  .input-group label {
+    position: static;
+  }
+
+  .input-group textarea {
+    max-height: 16vmin;
+    margin: var(--padding) 0;
+  }
+
+}
+
+@media screen and (max-width: 33rem) {
+  .input-group input {
+    margin: var(--padding) 0;
+    width: 90%;
+    height: calc(var(--padding) + 1.5rem);
+  }
+
+  .alert.alert-danger {
+    left: 5%;
+  }
+}
